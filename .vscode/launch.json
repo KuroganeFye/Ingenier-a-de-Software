@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CerradurasKApplication<CerradurasK>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "mx.ipn.alumno.jsanchezm1704.CerradurasK.Controller.CerradurasKApplication",
+            "projectName": "CerradurasK",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
