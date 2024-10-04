@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Practica1Application",
+            "request": "launch",
+            "mainClass": "mx.ipn.alumno.jsanchezm1704.IngenieraDeSoftware.Practica1Application",
+            "projectName": "IngenieraDeSoftware"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-CerradurasKApplication<CerradurasK>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
