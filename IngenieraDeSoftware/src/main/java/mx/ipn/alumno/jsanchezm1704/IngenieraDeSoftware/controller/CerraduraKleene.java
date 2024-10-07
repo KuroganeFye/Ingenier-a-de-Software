@@ -32,12 +32,14 @@ public class CerraduraKleene
     private  String estrella()
     {
         String cadena = generarBinarios(this.numero, " ");
+        cadena = cadena.substring(0, cadena.length() - 1); // Elimina el último carácter
         return "λ," + cadena;
     }
 
     private String  positiva()
     {
         String cadena = generarBinarios(this.numero, " ");
+        cadena = cadena.substring(0, cadena.length() - 1); // Elimina el último carácter
         return cadena;
     }
 
