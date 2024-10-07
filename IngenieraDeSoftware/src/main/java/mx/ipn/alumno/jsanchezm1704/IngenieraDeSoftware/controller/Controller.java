@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import mx.ipn.alumno.jsanchezm1704.IngenieraDeSoftware.model.Response;
 
+import mx.ipn.alumno.jsanchezm1704.IngenieraDeSoftware.model.Response;
 
 @RestController
 public class Controller 
@@ -15,16 +15,18 @@ public class Controller
     @GetMapping("/api/cerradura/estrella")
     public ResponseEntity<Response> cerraduraEstrella(@RequestParam  int n)
     {
-        String respuesta ="La cerradura de la estrella se ha cerrado " + String.valueOf(n);
-        Response response = new Response(respuesta);
-        return  ResponseEntity.status(HttpStatus.OK).body(response);
+        CerraduraKleene cerradura = new CerraduraKleene(n, 0);
+        String respuesta =cerradura.generarCadena();
+        Response response = new Response("Σ^*= {" + respuesta + "}");
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping("/api/cerradura/positiva/{n}")
     public ResponseEntity<Response> cerraduraPositiva(@PathVariable int n)
     {
-        //
-        Response response = new Response("La cerradura positiva se ha cerrado "+ String.valueOf(n) + " Σ^*={λ,0,1}");
+        CerraduraKleene cerradura = new CerraduraKleene(n, 1);
+        String respuesta =cerradura.generarCadena();
+        Response response = new Response("Σ^+= {"+ respuesta + "}");
         return  ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
